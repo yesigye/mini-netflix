@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
+body, .card {
+  background: #343a40;
+  color: white;
+}
+.card {
+  border: 0 !important;
+}
+hr, .border-bottom {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+.jumbotron, input {
+  background-color: #2a3035;
+}
 .dropdown-toggle {
   cursor: pointer;
 }

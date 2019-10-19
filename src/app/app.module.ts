@@ -10,16 +10,15 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
+import { appRoutes } from "./routes";
+import { MoviesListComponent } from './movies/movies-list/movies-list.component';
+import { MovieCardComponent } from './movies/movie-card/movie-card.component';
+
 @NgModule({
   imports: [
     BrowserModule,
     NgbModule,
-    RouterModule.forRoot([
-      {path: '', component: MoviesComponent},
-      {path: 'favorites', component: FavoritesComponent},
-      {path: 'login', component: LoginComponent},
-      {path: 'register', component: RegisterComponent}
-    ])
+    RouterModule.forRoot(appRoutes)
   ],
   declarations: [
     AppComponent,
@@ -27,7 +26,11 @@ import { RegisterComponent } from './register/register.component';
     MoviesComponent,
     FavoritesComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MoviesListComponent,
+    MovieCardComponent
+  ],
+  providers: [
   ],
   bootstrap: [AppComponent]
 })
