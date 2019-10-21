@@ -5,14 +5,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MoviesComponent } from './movies/movies.component';
 import { FavoritesComponent } from './favorites/favorites.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 
-import { appRoutes } from "./routes";
-import { MoviesListComponent } from './movies/movies-list/movies-list.component';
-import { MovieCardComponent } from './movies/movie-card/movie-card.component';
+import { appRoutes } from "./app.routes";
+
+import {
+  MovieRouteActivator,
+  MoviesService,
+  MovieResolver,
+  MovieCardComponent,
+  MovieDetailsComponent,
+  MoviesComponent,
+ } from "./movies/index";
+
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   imports: [
@@ -25,12 +32,15 @@ import { MovieCardComponent } from './movies/movie-card/movie-card.component';
     NavbarComponent,
     MoviesComponent,
     FavoritesComponent,
-    LoginComponent,
-    RegisterComponent,
-    MoviesListComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    MovieDetailsComponent,
+    NotFoundComponent,
   ],
   providers: [
+    MoviesService,
+    MovieRouteActivator,
+    MovieResolver,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

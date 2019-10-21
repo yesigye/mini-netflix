@@ -11,7 +11,7 @@ body, .card {
 hr, .border-bottom {
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
-.jumbotron, input {
+.jumbotron, input.form-control {
   background-color: #2a3035;
 }
 .dropdown-toggle {

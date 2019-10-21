@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-6 m-auto">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off" class="card card-body shade my-5">
+      <h5 class="text-muted mt-3 mb-4">
+        Login with your username and password
+      </h5>
+      <div class="form-group mb-1">
+        <input
+        (ngModel)="username"
+        type="text"
+        name="username"
+        id="username"
+        class="form-control form-control-lg"
+        placeholder="username"
+        required
+        >
+        <div class="text-danger small">
+          <span *ngIf="loginForm.controls.username?.invalid && loginForm.controls.username.touched || mouseoverLogin && loginForm.controls.username.invalid">
+            The username is required
+          </span> &nbsp;
+        </div>
+      </div>
+      <div class="form-group mb-1">
+        <input
+        (ngModel)="password"
+        type="password"
+        name="password"
+        id="password"
+        class="form-control form-control-lg"
+        placeholder="password"
+        required
+        >
+        <div class="text-danger small">
+          <span *ngIf="loginForm.controls.password?.invalid && loginForm.controls.password.touched || mouseoverLogin && loginForm.controls.password.invalid">
+            The password is required
+          </span> &nbsp;
+        </div>
+      </div>
+      <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
+        <button [disabled]="loginForm.invalid" type="submit" name="login_user" value="Login" class="btn btn-lg btn-block btn-primary">
+          <small>Login</small>
+        </button>
+      </span>
+      <a routerLink="/register" class="btn btn-lg btn-block btn-outline-secondary mt-3">
+        <small>Regiter an Account</small>
+      </a>
+    </form>
+  </div>
+</div>

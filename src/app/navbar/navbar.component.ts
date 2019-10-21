@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from "../services/auth.service";
 
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html'
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+  navbarCollapsed = false;
 
-  constructor() { }
+  constructor(private auth:AuthService) {}
 
-  ngOnInit() {
-  }
-
+  toggleCollapse() { this.navbarCollapsed = !this.navbarCollapsed }
 }

@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6 m-auto">
+      <form [formGroup]="profileForm" (ngSubmit)="saveProfile(profileForm.value)" autocomplete="off" class="card card-body shade my-5">
+        <h5 class="text-muted mt-3 mb-4">
+          Edit your profile information
+        </h5>
+        <div class="form-group mb-1">
+          <input
+          formControlName="firstName"
+          type="text"
+          id="firstName"
+          class="form-control form-control-lg"
+          placeholder="first name"
+          required
+          >
+          <div class="text-danger small">
+            <span *ngIf="!validateFirstName()">
+              The username is required
+            </span> &nbsp;
+          </div>
+        </div>
+        <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
+          <button type="submit" class="btn btn-lg btn-block btn-primary">
+            <small>Update Profile</small>
+          </button>
+        </span>
+      </form>
+    </div>
+  </div>
