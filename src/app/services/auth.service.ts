@@ -24,8 +24,4 @@ export class AuthService {
     // this.currentUser.lastName = userObject.lastName;
     // console.log(this.currentUser.firstName)
   }
-
-  isAuthenticated() {
-    return !!this.currentUser;
-  }
 }
