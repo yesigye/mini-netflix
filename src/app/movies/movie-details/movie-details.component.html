@@ -1,8 +1,33 @@
-<div class="card-group">
-  <div class="card">
-    <img class="card-img-top" [src]="movie.image.original" alt="">
+<div *ngIf="movie">
+  <div class="card-group">
+    <div class="card">
+      <img class="img-fluid" [src]="movie.image.original" alt="">
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h4>{{ movie.name }}</h4>
+        <p>
+          <b>Ratings: </b> <span class="text-success">{{ movie.rating.average }}</span>
+        </p>
+        <p><b>Released: </b> {{ movie.premiered | date: 'dd MMM yyyy' }}</p>
+        <p><b>Runtime: </b> {{ movie.runtime }}mins</p>
+        <p><b>Language: </b> {{ movie.language }}mins</p>
+        <p><b>Country: </b> {{ movie.network.country.name }}</p>
+        <p>
+          <b>Genre: </b>
+          <span *ngFor="let genre of movie.genres" class="badge badge-secondary ml-1">
+            {{ genre }}
+          </span>
+        </p>
+      </div>
+      <div class="card-footer">
+        <button (click)="toggleFavorite(movie)" class="btn btn-outline-success">
+          favorite
+        </button>
+      </div>
+    </div>
   </div>
-  <div class="card card-body">
-    <h4>{{ movie.name }}</h4>
-  </div>
+
+  <h2 class="mt-4 mb-2">Story line</h2>
+  <p [innerHtml]="movie.summary"></p>
 </div>

@@ -5,15 +5,27 @@ body, .card {
   background: #343a40;
   color: white;
 }
-.card {
-  border: 0 !important;
-}
 hr, .border-bottom {
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
 .jumbotron, input.form-control {
   background-color: #2a3035;
 }
+.page-link, .page-item.disabled .page-link {
+  background-color: #333a40;
+  border: 1px solid #2d3338;
+}
+.page-item.disabled .page-link {
+  opacity: 0.5;
+}
 .dropdown-toggle {
   cursor: pointer;
+}
+img.card-img-top {
+  height: auto;
+}
+@media (min-width: 768px) {
+  img.card-img-top {
+    height: 300px;
+  }
 }

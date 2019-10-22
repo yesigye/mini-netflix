@@ -9,6 +9,6 @@ export class MovieResolver implements Resolve<any> {
   }
 
   resolve() {
-    return this.moviesService.getMovies().pipe(map(movies => movies))
+    return this.moviesService.getMovies()
   }
 }

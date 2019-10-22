@@ -1,3 +1,7 @@
-<a class="card mb-3" [routerLink]="['/movies', movie.id]">
+<a class="card mb-3 text-white" [routerLink]="['/movies', movie.id]">
   <img class="card-img-top" [src]="movie.image.original" alt="">
+  <div class="card-body py-2">
+    <p class="card-title m-0">{{ movie.name }}</p>
+    <small>{{ movie.premiered | date: 'dd MMM yyyy' }}</small>
+  </div>
 </a>
